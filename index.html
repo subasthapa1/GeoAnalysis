@@ -23,6 +23,7 @@
 <body>
  <div id="map">MAP</div>
 
+
 </body>
 </html>
 
@@ -31,7 +32,7 @@
      crossorigin=""></script>
 <script>
     //Map Initialization
-    var map = L.map('map').setView([28.3949, 84.1240], 6);
+    var map = L.map('map').setView([55.3781, 3.4360], 6);
 
     //OSM layer 
     var osm =L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -49,5 +50,8 @@
 
     googleStreets.addTo(map)
 
-
+    //Adding marker on the map
+    var singleMarker= L.marker([52.62972886718355, -1.6479492187500002]).addTo(map);
+    var popup = singleMarker.bindPopup('Latitude and Longitude' + singleMarker.getLatLng())
+    popup.addTo(map);
 </script>
